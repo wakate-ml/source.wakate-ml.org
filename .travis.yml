@@ -1,0 +1,20 @@
+language: ruby
+script: bundle exec middleman build
+cache: bundler
+rvm:
+- 2.4.1
+env:
+  global:
+  - AWS_REGION=ap-northeast-1
+  - AWS_DEFAULT_REGION=ap-northeast-1
+  - secure: "nWzbznsRoncy/SDVEwW7pwQC250lqjDW/ufKJrKSwdMqheP/2toWuR+nxYYD5Hg0ljZQiLMJ0Pf4jwhfU70sd60B+dawCjlHGXdeO6eg/UHtTXMri0Td1ODptJpCAS40MpcplUPeKg1mo99L0WUGAXtVYQNi+IqrLiRknoHE9lns4RHf/4yNwjBl57BtdTiwVe1NhzW1otwfE0AOngt8f85GQNFmJYyQH8Me92GHgLuD+lmaHOEAe0EODWNvnD4YX43EHcnl7wK1o0dBHJzICllhijV8HDgh/OuOFfozW3c7unTFWmjQMv1JoBoIIFaYiPHy2mOCD3PAfGXW/uNEVSUGJXdOIjr6EQhKLpFt3LfEtWwTT0TxWvputjV9hEtOudxJeKi5P16TAKI4zewx4XURx+Tj07CnveAkUULI9cAmIElovAHXmGYMTgJozYNLHzFmb7tY1TuTm1jqtnXWiTXNmMyBGX3rUNp5t/I45ZZq9DL/8WtPb0YVmPjBLGbgbGYVifD+FANSJIJ+LmZ02lzlimR02LtrWGlc8fsbqJfR0KZMBsZgoNZW62SDNN+I720HDcWoEp054S3WK6dVcvnzTrAmK9Mh2BYi1ZOSpmJ8HqKYGexuD6Aq48yaXAmz75Krqq38YEexc4wQbIMWrqnQIXhUNughi7o2BnCQ5PQ="
+  - secure: "ExHqZTGICyZk0NF4PX2zOw5JxBKJesGidVzj/M+jYVGkhKkUjqSWrel0zNaFaRpQ1GW/9WNFaZZMkykTnETtNzUYof5AE3ahCWrst/fkOm3a9X/KxQI/PMvLiweDDn96DacT4mCx7ZqSICZUGksOuiA2RbAOAnNLD3iVG8Qhffe2ofP+UMCI87RMNOooWRwpbPIzi2WCYpgbzH2nErXUJu1oCGWNIYBYDfXJDeOtK0lGdHvvZnooOqnv3beO4ZweVxd24ouDss/IUVC+2dHnXHMmriiTqfA58vyD/J19LzRyneZpDGsxpCDC9gxUkptr/N56hKZVp7HLC+AN2X2ntu6C2Xe0pzUMHtOpDcbzzxpLuk4Ufa+qI/tm8YrjMzKBGTfje1N2uOOMamWXag4vkFnB44gnoAHdX8iGuyKOgXkzAo8H/EomAW++K0S99oh6FLmqkEKbFT9ZLWunwph/fc9yhofyQb2xVQGCHW0elu+T4C3/e4ZulLh30BjVGh6hUJL2xpI67qrWPHKlZ1HKkJselTfZgRtSABFDKmnFBfxkplv44lPLr63SCgl9NyopRfuCEDuN1sNmihc3Z6jImoIrI7sQjj3yi+W9eBycMDKr7DbOlFA22jdH2srBTULmAodqbL3zHqC42SFT75MY98vqP9IOi/WvYGAOlIPqdEw="
+before_install:
+- pip install --user awscli
+deploy:
+  provider: script
+  skip_cleanup: true
+  script:
+  - aws s3 sync build s3://wakate-ml.org/ --delete
+  on:
+    branch: master
