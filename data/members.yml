@@ -8,6 +8,9 @@
     -
       url: https://github.com/ayemos/
       fa: github
+    -
+      url: https://ayemos.me/
+      fa: home
 -
   name: MATHETAKE
   avatar: images/avatar/mathetake.jpg
@@ -20,4 +23,14 @@
       fa: github
     -
       url: http://mathetake.hatenablog.com/
+      fa: rss
+-
+  name: だみ〜
+  avatar: images/avatar/dammy.jpg
+  links:
+    -
+      url: https://twitter.com/guiltydammy
+      fa: twitter
+    -
+      url: http://glamorousdammy.hatenablog.com/
       fa: rss
