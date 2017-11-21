@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "ja", "http-equiv" => "content-language"}/
+    %meta{:content => "ie=edge", "http-equiv" => "x-ua-compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+    / Use the title from a page's frontmatter if it has one
+    %title= current_page.data.title || '機械学習若手の会'
+    = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css'
+    = stylesheet_link_tag 'stylesheets/application'
+    = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'
+    = javascript_include_tag 'javascripts/application'
+    = favicon_tag 'images/favicon.ico'
+  %body
+    #wrapper
+      = yield
+    #navbar
+      = partial 'layouts/footer'

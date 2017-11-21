@@ -1,0 +1,23 @@
+-
+  name: ayemos
+  avatar: images/avatar/ayemos.jpg
+  links:
+    -
+      url: https://twitter.com/ayemos_y/
+      fa: twitter
+    -
+      url: https://github.com/ayemos/
+      fa: github
+-
+  name: MATHETAKE
+  avatar: images/avatar/mathetake.jpg
+  links:
+    -
+      url: https://twitter.com/mathetake/
+      fa: twitter
+    -
+      url: https://github.com/mathetake/
+      fa: github
+    -
+      url: http://mathetake.hatenablog.com/
+      fa: rss

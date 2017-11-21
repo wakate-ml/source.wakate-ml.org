@@ -13,6 +13,13 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+page "/*.html", layout: 'application'
+page '/stylesheets/*.scss', layout: false
+page '/javascripts/*.js', layout: false
+
+set :images_dir, 'images'
+activate :directory_indexes
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
@@ -44,3 +51,5 @@ page '/*.txt', layout: false
 #   activate :minify_css
 #   activate :minify_javascript
 # end
+
+set :haml, { :ugly => true, :format => :html5 }

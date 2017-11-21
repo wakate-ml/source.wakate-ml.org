@@ -1,0 +1,17 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
+* {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+body,h3,h4{
+  font-weight: 100;
+}
+
+h1,h2, {
+  font-weight: 300;
+  font-size: 1.4rem;
+}
+
+@import "./navbar.css.scss";
+@import "./main.css.scss";

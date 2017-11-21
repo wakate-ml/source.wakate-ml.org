@@ -1,0 +1,26 @@
+%section#top-banner
+  .container.has-text-centered
+    = image_tag 'images/logo_horizontal.png', width: '60%'
+.delimiter.delimiter-01
+%section#members
+  .container.has-text-centered
+    %h1
+      members
+    .columns.is-multiline.is-mobile
+      - data.members.each do |member|
+        .column.is-one-quarter-desktop.is-one-quarter-tablet.is-half-mobile
+          .member-item
+            .member-content
+              .avatar
+                = image_tag member.avatar
+              .ids
+                - member.links.each do |link|
+                  = link_to '', link.url, class: "id-link fa fa-2x fa-#{link.fa}"
+.delimiter.delimiter-02
+%section#contact
+  .container.has-text-centered
+    %h1
+      contact
+    %p
+      = mail_to 'me@ayemos.me', 'me@ayemos.me', class: 'decorated'
+
