@@ -52,4 +52,4 @@ activate :directory_indexes
 #   activate :minify_javascript
 # end
 
-set :haml, { :ugly => true, :format => :html5 }
+set :haml, { format: :html5 }
